@@ -5,7 +5,7 @@
       v-model="title"
       @keydown.enter="addTask"
       type="text"
-      placeholder="New task..."
+      placeholder="Nova tarefa..."
     />
 
     <button class="form-element" @click="addTask">+</button>

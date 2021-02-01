@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <h1>Tasks</h1>
+    <h1>Tarefas</h1>
+
     <TasksProgress :progress="progress" />
+
     <NewTask @taskAdded="addTask" />
+
     <Tasks
       :tasks="tasks"
       @taskDeleted="deleteTask"
@@ -85,5 +88,24 @@ body {
   margin-bottom: 5px;
   font-weight: 300;
   font-size: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  input.form-element {
+    width: 80%;
+  }
+
+  .form-element {
+    font-size: 1.3em;
+  }
+
+  .task {
+    font-size: 1rem;
+    height: 60px;
+  }
+
+  .tasks .task {
+    margin: 5px;
+  }
 }
 </style>

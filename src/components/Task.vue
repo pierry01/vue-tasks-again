@@ -32,7 +32,7 @@ export default {
 .task {
   position: relative;
   box-sizing: border-box;
-  width: 250px;
+  width: 300px;
   height: 100px;
   padding: 10px;
   border-radius: 8px;
