@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Tasks</h1>
     <NewTask @taskAdded="addTask" />
-    <Tasks :tasks="tasks" />
+    <Tasks :tasks="tasks" @taskDeleted="deleteTask" />
   </div>
 </template>
 
@@ -14,10 +14,7 @@ export default {
   components: { Tasks, NewTask },
   data() {
     return {
-      tasks: [
-        { title: "Task 1", pending: true },
-        { title: "Task 2", pending: false },
-      ],
+      tasks: [],
     };
   },
   methods: {
@@ -31,6 +28,9 @@ export default {
           pending: task.pending || true,
         });
       }
+    },
+    deleteTask(id) {
+      this.tasks.splice(id, 1);
     },
   },
 };
