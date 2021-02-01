@@ -1,11 +1,15 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
+    <Tasks :tasks="tasks" />
   </div>
 </template>
 
 <script>
+import Tasks from "./components/Tasks.vue";
+
 export default {
+  components: { Tasks },
   data() {
     return {
       tasks: [
