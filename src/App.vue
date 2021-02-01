@@ -2,7 +2,11 @@
   <div id="app">
     <h1>Tasks</h1>
     <NewTask @taskAdded="addTask" />
-    <Tasks :tasks="tasks" @taskDeleted="deleteTask" />
+    <Tasks
+      :tasks="tasks"
+      @taskDeleted="deleteTask"
+      @taskStateChanged="toggleTaskState"
+    />
   </div>
 </template>
 
@@ -31,6 +35,9 @@ export default {
     },
     deleteTask(id) {
       this.tasks.splice(id, 1);
+    },
+    toggleTaskState(id) {
+      this.tasks[id].pending = !this.tasks[id].pending;
     },
   },
 };
