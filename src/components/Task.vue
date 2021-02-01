@@ -17,9 +17,9 @@ export default {
       return {
         pending: this.task.pending,
         done: !this.task.pending,
-      }
-    }
-  }
+      };
+    },
+  },
 };
 </script>
 
@@ -40,14 +40,14 @@ export default {
 }
 
 .pending {
-  border-left: 12px solid #B73229;
-  background-color: #F44336;
+  border-left: 12px solid #b73229;
+  background-color: #f44336;
 }
 
 .done {
-  color: #DDD;
-  border-left: 12px solid #0A8F08;
-  background-color: #4CAF50;
+  color: #ddd;
+  border-left: 12px solid #0a8f08;
+  background-color: #4caf50;
   text-decoration: line-through;
 }
 </style>

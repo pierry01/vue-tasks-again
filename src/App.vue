@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <h1>Tarefas</h1>
+    <h1>Tasks</h1>
+    <NewTask @taskAdded="addTask" />
     <Tasks :tasks="tasks" />
   </div>
 </template>
 
 <script>
 import Tasks from "./components/Tasks.vue";
+import NewTask from "./components/NewTask.vue";
 
 export default {
-  components: { Tasks },
+  components: { Tasks, NewTask },
   data() {
     return {
       tasks: [
@@ -17,6 +19,19 @@ export default {
         { title: "Task 2", pending: false },
       ],
     };
+  },
+  methods: {
+    addTask(task) {
+      const sameTitle = (t) => t.title == task.title;
+      const reallyNew = this.tasks.filter(sameTitle).length == 0;
+
+      if (reallyNew) {
+        this.tasks.push({
+          title: task.title,
+          pending: task.pending || true,
+        });
+      }
+    },
   },
 };
 </script>

@@ -35,7 +35,7 @@ export default {
 }
 
 .no-task {
-  color: #AAA;
+  color: #aaa;
   font-size: 1.7rem;
 }
 </style>
